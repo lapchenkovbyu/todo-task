@@ -1,8 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import TodoItemPage from "../components/todo/TodoItemPage";
-import TodoList from "../components/todo/TodoList";
+import EditTodo from "../components/todo/EditTodo";
 
 Vue.use(VueRouter);
 
@@ -13,16 +12,9 @@ const routes = [
     component: Home,
     children: [
       {
-        path: "/todo_:id",
-        name: "Todo item page",
-        component: TodoItemPage
-        // props: route => ({ todo: route.query.q })
-      },
-      {
-        path: "/todoList",
-        name: "Todo list",
-        component: TodoList
-        // props: route => ({ todo: route.query.q })
+        path: "/todo_:id/edit",
+        name: "Todo edit item page",
+        component: EditTodo
       }
     ]
   }
